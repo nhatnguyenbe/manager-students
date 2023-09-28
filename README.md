@@ -2,7 +2,7 @@
 
     This is simple student management system. This project has also include Laravel Role Permission System (spatie)
 
-![Alt text](image.png)
+![Alt text](image-1.png)
 
 ### This project uses the following packages:
 
