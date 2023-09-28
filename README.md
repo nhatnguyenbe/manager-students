@@ -1,6 +1,6 @@
 # Laravel Students Manager System
 
-A free REST API program for hotel reservation, powered by Laravel. This project is designed to work similarly to the hotel reservation section on www.alibaba.ir
+    This is simple student management system. This project has also include Laravel Role Permission System (spatie)
 
 ![Alt text](image.png)
 
