@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: localhost:3306
--- Thời gian đã tạo: Th9 05, 2023 lúc 09:53 PM
+-- Thời gian đã tạo: Th9 28, 2023 lúc 01:16 PM
 -- Phiên bản máy phục vụ: 8.0.30
 -- Phiên bản PHP: 8.1.10
 
@@ -31,16 +31,16 @@ CREATE TABLE `diems` (
   `id` int UNSIGNED NOT NULL,
   `MaSV` int UNSIGNED NOT NULL,
   `MaMH` int UNSIGNED NOT NULL,
-  `NamHoc` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `NamHoc` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `HocKi` int DEFAULT NULL,
   `LanHoc` int NOT NULL DEFAULT '1',
   `LanThi` int NOT NULL DEFAULT '1',
   `DiemCC` int DEFAULT NULL,
   `DiemGK` int DEFAULT NULL,
   `DiemCK` int DEFAULT NULL,
-  `DiemHS10` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `DiemHS4` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `DiemAlphabet` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `DiemHS10` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `DiemHS4` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `DiemAlphabet` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `DanhGia` int DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -234,9 +234,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 
 CREATE TABLE `models` (
   `id` int UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `function` text COLLATE utf8mb4_unicode_ci,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `function` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -322,8 +322,8 @@ CREATE TABLE `personal_access_tokens` (
 
 CREATE TABLE `roles` (
   `id` int UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `permission` text COLLATE utf8mb4_unicode_ci,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `permission` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -348,17 +348,17 @@ CREATE TABLE `sinh_viens` (
   `MaSV` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `TenSV` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `NgaySinh` date DEFAULT NULL,
-  `email` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `cccd` varchar(12) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `cccd` varchar(12) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `GioiTinh` tinyint DEFAULT NULL,
   `MaLop_ID` int UNSIGNED NOT NULL,
   `NamNH` date DEFAULT NULL,
   `NamKT` date DEFAULT NULL,
   `DienThoai` varchar(14) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `NoiSinh` varchar(150) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `NoiSinh` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `QueQuan` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `DanToc` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `TonGiao` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `TonGiao` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `image` varchar(250) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `status` int NOT NULL DEFAULT '1',
   `created_at` timestamp NULL DEFAULT NULL,
@@ -383,15 +383,15 @@ INSERT INTO `sinh_viens` (`id`, `MaSV`, `TenSV`, `NgaySinh`, `email`, `cccd`, `G
 
 CREATE TABLE `users` (
   `id` int UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `username` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `images` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `username` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `images` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `role_id` int UNSIGNED NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
-  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `status` int NOT NULL DEFAULT '1',
-  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `remember_token` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -402,7 +402,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `name`, `username`, `email`, `images`, `role_id`, `email_verified_at`, `password`, `status`, `remember_token`, `created_at`, `updated_at`) VALUES
 (1, 'Quản Trị', 'admin@2023', 'admin@gmail.com', '20214736369bae7c7e6e57949304bb8cc2d2b7f7.png', 1, NULL, '$2y$10$NV5/RPmRuHUOB8RaMhLEMOTDU1Bw7tk9LGDX1q91cZBtwgqyfDMtO', 1, NULL, '2023-08-16 00:45:12', '2023-08-29 10:52:09'),
-(2, 'Lê Duy Hào', 'haole2k1', 'haole@gmail.com', '807a0e51497f89e7a685e0f68e66bb337feada3b.jpg', 1, NULL, '$2y$10$GmSTwGLwkfji3mhHSWLDdeR64PoEdvpDyIATNIdPpPkeWL6YIaELq', 1, NULL, '2023-08-16 00:49:57', '2023-08-17 03:00:18'),
+(2, 'Nhat Nguyen', 'nhatnguyenit', 'nhat@gmail.com', '807a0e51497f89e7a685e0f68e66bb337feada3b.jpg', 1, NULL, '$2y$10$zK0h8f8WKdx2TZx02upVp.szPJDhMXd3aFXE8QjInMRWBONiZ.FY6', 1, NULL, '2023-08-16 00:49:57', '2023-08-17 03:00:18'),
 (3, 'Tài khoản sinh viên', 'qlpm@2023', 'qlpm@gmail.com', '1440bbc66cc6298ddd98e5f2964a83da918af004.jpg', 3, NULL, '$2y$10$RkfsevZAKQ7sSqVi4dHQZO5hPM10CrpEN99IGXaloqI6hETayjhPi', 1, NULL, '2023-08-17 02:51:53', '2023-08-27 05:53:32');
 
 --
