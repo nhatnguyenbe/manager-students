@@ -1,6 +1,6 @@
 # Laravel Students Manager System
 
-    This is simple student management system. This project has also include Laravel Role Permission System (spatie)
+This is simple student management system. This project has also include Laravel Role Permission System (spatie)
 
 ![Alt text](image-1.png)
 
